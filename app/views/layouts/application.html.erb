@@ -8,8 +8,39 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
+    <header class="header">
+      <div class="header-inner">
+        <div class="logo">
+          <img src="" />
+        </div>
+        <nav class="header-nav">
+          <form class="form">
+            <input type="search" class="form-input" placeholder="search" />
+            <button class="form-button"><i class="fa fa-search"></i></button>
+          </form>  
+          <% if user_signed_in? %>
+            <div class="header-nav-item">
+              <div><%= link_to current_user.nickname, "#", class: "header-button header-login" %>
+              </div>
+            </div>
+            <div class="header-nav-item">
+              <div><%= link_to 'ログアウト', destroy_user_session_path,  method: :delete, class: "header-button header-post" %>
+              </div>
+            </div>
+          <% else %>
+            <div class="header-nav-item">
+              <div><%= link_to 'ログイン', new_user_session_path, class: "header-button header-login" %>
+              </div>
+            </div>
+            <div class="header-nav-item">
+              <div><%= link_to '新規登録', new_user_registration_path, class: "header-button header-post" %>
+              </div>
+            </div>
+          <% end %>
+        </nav>
+      </div>
+    </header>
     <%= yield %>
   </body>
 </html>
