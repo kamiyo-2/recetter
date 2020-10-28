@@ -67,7 +67,7 @@
 | Column     | Type         | Options           |
 | ---------- | ------------ | ----------------- |
 | text       | text         | null: false       |
-| user       | references   | foreign_key: true |
+| tad        | references   | foreign_key: true |
 | recipe     | references   | foreign_key: true |
 
 ### Association
