@@ -1,11 +1,11 @@
 <div class="card">
   <div class="card__body">
-  <%= link_to image_tag(prototype.image, class: :card__img ), prototype_path(prototype.id), method: :get%>
-    <%= link_to prototype.title, prototype_path(prototype.id), method: :get, class: :card__title%>
+  <%= link_to image_tag(recipe.image, class: :card__img ), recipe_path(recipe.id), method: :get%>
+    <%= link_to recipe.title, recipe_path(recipe.id), method: :get, class: :card__title%>
     <p class="card__summary">
-      <%= prototype.catch_copy %>
+      <%= recipe.material %>
     </p>
-    <%= link_to prototype.user.name, user_path(prototype.user.id), class: :card__user %>
+    <%# <%= link_to recipe.user.nickname, user_path(recipe.user.id), class: :card__user %> %>
     
   </div> 
 </div>

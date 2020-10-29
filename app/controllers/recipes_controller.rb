@@ -9,7 +9,7 @@ class RecipesController < ApplicationController
   end
 
   def create
-    @recipe = ResipesTag.new(recipe_params)
+    @recipe = RecipesTag.new(recipe_params)
     if @recipe.valid?
       @recipe.save
       return redirect_to root_path
@@ -17,6 +17,10 @@ class RecipesController < ApplicationController
       render "new"
     end
   end
+
+  def show
+  end
+
 
   private
 

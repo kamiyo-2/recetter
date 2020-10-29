@@ -146,6 +146,11 @@
   text-decoration: underline;
 }
 
+img {
+  max-width: 100%;
+  vertical-align: bottom;
+}
+
 
 /* フォーム周り */
 .form__wrapper{

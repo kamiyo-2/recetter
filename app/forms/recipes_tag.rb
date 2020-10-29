@@ -1,7 +1,7 @@
 class RecipesTag
 
   include ActiveModel::Model
-  attr_accessor :title, :text, :process, :material, :user_id, :name
+  attr_accessor :title, :text, :process, :material, :user_id, :image, :name
 
   with_options presence: true do
     validates :title
@@ -13,7 +13,7 @@ class RecipesTag
   end
 
   def save
-    recipe = Recipe.create(title: title, text: text, process: process, material: material, user_id: user_id)
+    recipe = Recipe.create(title: title, text: text, process: process, material: material, image: image, user_id: user_id)
     tag = Tag.where(name: name).first_or_initialize
     tag.save
 
